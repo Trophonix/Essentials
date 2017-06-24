@@ -77,9 +77,9 @@ public abstract class UserData extends PlayerExtension implements IConf {
         jailTimeout = _getJailTimeout();
         lastLogin = _getLastLogin();
         lastLogout = _getLastLogout();
-        lastLoginAddress = _getLastLoginAddress();
+        lastLoginAddress = "REDACTED";
         afk = _getAfk();
-        geolocation = _getGeoLocation();
+        geolocation = "REDACTED";
         isSocialSpyEnabled = _isSocialSpyEnabled();
         isNPC = _isNPC();
         arePowerToolsEnabled = _arePowerToolsEnabled();
@@ -606,11 +606,11 @@ public abstract class UserData extends PlayerExtension implements IConf {
     private String lastLoginAddress;
 
     private String _getLastLoginAddress() {
-        return config.getString("ipAddress", "");
+        return "REDACTED";
     }
 
     public String getLastLoginAddress() {
-        return lastLoginAddress;
+        return "REDACTED";
     }
 
     private void _setLastLoginAddress(String address) {
@@ -638,11 +638,11 @@ public abstract class UserData extends PlayerExtension implements IConf {
     private String geolocation;
 
     private String _getGeoLocation() {
-        return config.getString("geolocation");
+        return "REDACTED";
     }
 
     public String getGeoLocation() {
-        return geolocation;
+        return "REDACTED";
     }
 
     public void setGeoLocation(String geolocation) {

@@ -27,12 +27,12 @@ public class Commandseen extends EssentialsCommand {
 
     @Override
     protected void run(final Server server, final CommandSource sender, final String commandLabel, final String[] args) throws Exception {
-        seen(server, sender, commandLabel, args, true, true, true);
+        seen(server, sender, commandLabel, args, true, true, false);
     }
 
     @Override
     protected void run(final Server server, final User user, final String commandLabel, final String[] args) throws Exception {
-        seen(server, user.getSource(), commandLabel, args, user.isAuthorized("essentials.seen.banreason"), user.isAuthorized("essentials.seen.extra"), user.isAuthorized("essentials.seen.ipsearch"));
+        seen(server, user.getSource(), commandLabel, args, user.isAuthorized("essentials.seen.banreason"), user.isAuthorized("essentials.seen.extra"), false);
     }
 
     protected void seen(final Server server, final CommandSource sender, final String commandLabel, final String[] args,
@@ -122,9 +122,9 @@ public class Commandseen extends EssentialsCommand {
         if (location != null && (!(sender.isPlayer()) || ess.getUser(sender.getPlayer()).isAuthorized("essentials.geoip.show"))) {
             sender.sendMessage(tl("whoisGeoLocation", location));
         }
-        if (extra) {
-            sender.sendMessage(tl("whoisIPAddress", user.getBase().getAddress().getAddress().toString()));
-        }
+//        if (extra) {
+//            sender.sendMessage(tl("whoisIPAddress", user.getBase().getAddress().getAddress().toString()));
+//        }
     }
 
     private void seenOffline(final Server server, final CommandSource sender, User user, final boolean showBan, final boolean extra) throws Exception {
@@ -163,9 +163,9 @@ public class Commandseen extends EssentialsCommand {
             sender.sendMessage(tl("whoisGeoLocation", location));
         }
         if (extra) {
-            if (!user.getLastLoginAddress().isEmpty()) {
-                sender.sendMessage(tl("whoisIPAddress", user.getLastLoginAddress()));
-            }
+//            if (!user.getLastLoginAddress().isEmpty()) {
+//                sender.sendMessage(tl("whoisIPAddress", user.getLastLoginAddress()));
+//            }
             final Location loc = user.getLogoutLocation();
             if (loc != null) {
                 sender.sendMessage(tl("whoisLocation", loc.getWorld().getName(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()));
@@ -177,10 +177,10 @@ public class Commandseen extends EssentialsCommand {
         final UserMap userMap = ess.getUserMap();
 
         if (ess.getServer().getBanList(BanList.Type.IP).isBanned(ipAddress)) {
-            sender.sendMessage(tl("isIpBanned", ipAddress));
+            sender.sendMessage(tl("isIpBanned", "REDACTED"));
         }
 
-        sender.sendMessage(tl("runningPlayerMatch", ipAddress));
+        sender.sendMessage(tl("runningPlayerMatch", "REDACTED"));
 
         ess.runTaskAsynchronously(new Runnable() {
             @Override
