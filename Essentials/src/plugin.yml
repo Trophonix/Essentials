@@ -13,7 +13,7 @@ commands:
     usage: /<command> [player/message...]
     aliases: [eafk,away,eaway]
   antioch:
-    description: 'A little surprise for operators.'
+    description: A little surprise for operators.
     usage: /<command> [message]
     aliases: [eantioch,grenade,egrenade,tnt,etnt]
   back:
@@ -36,10 +36,6 @@ commands:
     description: Bans a player.
     usage: /<command> <player> [reason]
     aliases: [eban]
-  banip:
-    description: Bans an IP address.
-    usage: /<command> <address>
-    aliases: [ebanip]
   book:
     description: Allows reopening and editing of sealed books.
     usage: /<command> [title|author [name]]
@@ -367,10 +363,6 @@ commands:
     description: Set the owner of a player skull
     usage: /<command> [owner]
     aliases: [eskull, playerskull, eplayerskull, head, ehead]
-  socialspy:
-    description: Toggles if you can see msg/mail commands in chat.
-    usage: /<command> [player] [on|off]
-    aliases: [esocialspy]
   spawner:
     description: Change the mob type of a spawner.
     usage: /<command> <mob> [delay]
@@ -383,10 +375,6 @@ commands:
     description: Change your speed limits.
     usage: /<command> [type] <speed> [player]
     aliases: [flyspeed,eflyspeed,fspeed,efspeed,espeed,walkspeed,ewalkspeed,wspeed,ewspeed]
-  sudo:
-    description: Make another user perform a command.
-    usage: /<command> <player> <command [args]>
-    aliases: [esudo]
   suicide:
     description: Causes you to perish.
     usage: /<command>
